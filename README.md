@@ -4,8 +4,7 @@ I am learning Rust and trying to solve AoC puzzles without LLMs.
 
 > Code is probably shit because I am still learning.
 
-Compile it and run specific puzzle by passing argument which includes day and the task number.
-For example for day one puzzle and task two the right arg is: day1t2
+Compile it and run binary for each day puzzle.
 
 ### Run examples 
 ```
