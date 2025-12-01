@@ -1,6 +1,11 @@
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
+use std::io::Result;
+
+fn main() -> Result<()> {
+    solution()
+}
 
 pub fn solution() -> io::Result<()> {
     let mut dial: i32 = 50;
@@ -18,19 +23,13 @@ pub fn solution() -> io::Result<()> {
         let number: i32 = line[1..].parse().unwrap();
 
         if direction == "R" {
-            for _ in 0..number {
-                dial = (dial + 1) % (max + 1);
-                if dial == 0 {
-                    zeroes += 1;
-                }
-            }
+            dial = (dial + number) % (max + 1);
         } else {
-            for _ in 0..number {
-                dial = (dial - 1) % (max + 1);
-                if dial == 0 {
-                    zeroes += 1;
-                }
-            }
+            dial = (dial - number) % (max + 1);
+        }
+
+        if dial == 0 {
+            zeroes += 1;
         }
 
     }
